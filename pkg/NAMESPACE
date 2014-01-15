@@ -1,0 +1,7 @@
+useDynLib(ExactSampling)
+export("knn.cv","knn.boot","knn.search","knn.emp")
+
+
+exportPattern("^[[:alpha:]]+")
+
+
