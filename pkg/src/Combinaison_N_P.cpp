@@ -20,11 +20,9 @@ Combinaison_N_P::Combinaison_N_P(int N)
 {
 	Log_n_factoriel = new long double[N];
 	Log_n_factoriel[0] = 0; // log(1)
-	Log_n_factoriel[1] = logl(2);  // log(2)
+	Log_n_factoriel[1] = logl(2.);  // log(2)
 	for (int i = 2; i < N ; i++)
-	{	
-		Log_n_factoriel[i] = Log_n_factoriel[i - 1] + logl(i + 1);
-	}
+		Log_n_factoriel[i] = Log_n_factoriel[i - 1] + logl(static_cast<double>(i + 1));
 }
 
 
@@ -56,7 +54,7 @@ long double Combinaison_N_P::Combinaison(int n,int p)
 		resultat = 1;
 		return resultat;
 	}
-	resultat = expl(Log_n_factoriel[n - 1] - Log_n_factoriel[p - 1] - Log_n_factoriel[n - p - 1]);
+	resultat = expl(static_cast<double>(Log_n_factoriel[n - 1] - Log_n_factoriel[p - 1] - Log_n_factoriel[n - p - 1]));
 	return  resultat;
 }
 

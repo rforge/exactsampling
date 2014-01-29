@@ -14,18 +14,18 @@
 class Fonctions
 {
 private:
-	double *logcum;
+	double *logcum; //le vecteur des sommes cumulees du log n!
 	
 public:
 	Fonctions();
 	Fonctions(int n);
 	~Fonctions();
 	
-  long double comb(int n, int p);
-	long double combno(int n, int p);
-	long double Pno(int p, int n, int t, double v);
+  long double comb(int n, int p);				//computes n choose p
+	long double combno(int n, int p);			//computes  (n+p-1) choose p
+	long double Pno(int p, int n, int t, double v);	// p/(v+p)P(X=v) if X follows hyper-geometric distribution with parameters K=v+p, N=n+t+p-1 and n=t
 	long double Pno_cum(int p, int n ,int t, double v);
-	long double Phyper(int p,int n,int t, int v);
+	long double Phyper(int p,int n,int t, int v); // P(X=v) if X follows hyper-geometric distribution with parameters K=p, N=n+p and n=t
 	long double Nhyper(int l, int n);
 };
 

@@ -19,10 +19,10 @@ HyperGeometrique::HyperGeometrique(int N)
 {
 	Log_n_factoriel = new long double[N];
 	Log_n_factoriel[0] = 0; // log(1)
-	Log_n_factoriel[1] = logl(2);  // log(2)
+	Log_n_factoriel[1] = logl(2.);  // log(2)
 	for (int i = 2; i < N ; i++)
 	{
-		Log_n_factoriel[i] = Log_n_factoriel[i - 1] + logl(i + 1);
+		Log_n_factoriel[i] = Log_n_factoriel[i - 1] + logl(static_cast<double>(i + 1));
 	}
 	
 }
